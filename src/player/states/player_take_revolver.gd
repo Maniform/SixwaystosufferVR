@@ -9,15 +9,15 @@ extends StateAsync
 
 func enter_async() -> void:
 	var initial_revolver_position := player.initial_revolver_position
-	var start_position := revolver.global_position
-	var start_rotation := revolver.global_rotation
+	#var start_position := revolver.global_position
+	#var start_rotation := revolver.global_rotation
 	revolver.global_position = initial_revolver_position.global_position
 	revolver.global_rotation = initial_revolver_position.global_rotation
 	
 	audio_player.play()
 	woosh_player.play()
 	
-	await tween_taking_revolver(start_position, start_rotation)
+	#await tween_taking_revolver(start_position, start_rotation)
 
 func tween_taking_revolver(target_position: Vector3, target_rotation: Vector3) -> void:
 	revolver.show()

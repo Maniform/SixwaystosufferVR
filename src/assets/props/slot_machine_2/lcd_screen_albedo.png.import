@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://k3nt0u4x4dxu"
 path.s3tc="res://.godot/imported/lcd_screen_albedo.png-367ec18f52ef916ecb65ef2a2a90d43e.s3tc.ctex"
+path.etc2="res://.godot/imported/lcd_screen_albedo.png-367ec18f52ef916ecb65ef2a2a90d43e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/props/slot_machine_2/lcd_screen_albedo.png"
-dest_files=["res://.godot/imported/lcd_screen_albedo.png-367ec18f52ef916ecb65ef2a2a90d43e.s3tc.ctex"]
+dest_files=["res://.godot/imported/lcd_screen_albedo.png-367ec18f52ef916ecb65ef2a2a90d43e.s3tc.ctex", "res://.godot/imported/lcd_screen_albedo.png-367ec18f52ef916ecb65ef2a2a90d43e.etc2.ctex"]
 
 [params]
 

@@ -6,6 +6,7 @@ signal chamber_updated(revolver: Revolver)
 
 @export var patrons: PlayerPatrons
 
+@onready var camera: Camera3D = $"Player Head/Camera Point/Camera3D"
 @onready var state_machine: StateMachine = %StateMachine
 @onready var revolver: Revolver = %Revolver
 @onready var camera_shaker: CameraShaker = %CameraShaker

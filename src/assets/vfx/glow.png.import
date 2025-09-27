@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnquhnfhxh2b"
 path.s3tc="res://.godot/imported/glow.png-c30f520a9171bcc3a59ef412372b7514.s3tc.ctex"
+path.etc2="res://.godot/imported/glow.png-c30f520a9171bcc3a59ef412372b7514.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/vfx/glow.png"
-dest_files=["res://.godot/imported/glow.png-c30f520a9171bcc3a59ef412372b7514.s3tc.ctex"]
+dest_files=["res://.godot/imported/glow.png-c30f520a9171bcc3a59ef412372b7514.s3tc.ctex", "res://.godot/imported/glow.png-c30f520a9171bcc3a59ef412372b7514.etc2.ctex"]
 
 [params]
 
