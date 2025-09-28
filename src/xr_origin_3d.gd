@@ -27,8 +27,7 @@ func _ready() -> void:
 			XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, false);
 			global_position = non_xr_camera.global_position
 			global_position += position_offset
-			#call_deferred("reset_camera")
-			get_tree().create_timer(1.0).timeout.connect(reset_camera)
+			call_deferred("reset_camera")
 
 func reset_camera() -> void:
 	position -= xr_camera.position
