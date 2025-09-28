@@ -409,10 +409,10 @@ patrons = NodePath("../Table/Patrons")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="SubViewportContainer/SubViewport/World3D/Play Room" node_paths=PackedStringArray("non_xr_player", "revolver_table_mockup", "revolver", "intro_state")]
 transform = Transform3D(1.0000002, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 0.34, 3.963, 2.802)
-world_scale = 2.8
+world_scale = 3.5
 script = ExtResource("5_623xu")
 non_xr_player = NodePath("../Player")
-position_offset = Vector3(0, 0, -3)
+position_offset = Vector3(0, 0, -1.5)
 revolver_table_mockup = NodePath("../Table/Revolver Table Mockup")
 revolver = NodePath("../Table/Revolver")
 revolver_speed = 10.0

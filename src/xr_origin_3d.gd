@@ -25,13 +25,13 @@ func _ready() -> void:
 		if non_xr_player is Player:
 			non_xr_camera = non_xr_player.camera
 			XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, false);
-			global_position = non_xr_camera.global_position
-			global_position += position_offset
-			call_deferred("reset_camera")
+		if xr_interface is OpenXRInterface:
+			xr_interface.pose_recentered.connect(reset_camera)
 
 func reset_camera() -> void:
-	position -= xr_camera.position
-	rotation.y -= xr_camera.rotation.y
+	global_rotation.y -= xr_camera.global_rotation.y
+	global_position = non_xr_camera.global_position
+	global_position += position_offset - xr_camera.position
 
 func _on_right_hand_area_entered(area: Area3D) -> void:
 	if area == revolver_table_mockup:
