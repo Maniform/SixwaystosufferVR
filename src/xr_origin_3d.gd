@@ -22,17 +22,13 @@ var revolver_grabbed: bool = false
 func _ready() -> void:
 	xr_interface = XRServer.find_interface("OpenXR")
 	if xr_interface and xr_interface.is_initialized():
-		print("OpenXR initialized successfully")
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-		get_viewport().use_xr = true
 		if non_xr_player is Player:
 			non_xr_camera = non_xr_player.camera
 			XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, false);
 			global_position = non_xr_camera.global_position
 			global_position += position_offset
-			call_deferred("reset_camera")
-	else:
-		print("OpenXR not initialized, please check if your headset is connected")
+			#call_deferred("reset_camera")
+			get_tree().create_timer(1.0).timeout.connect(reset_camera)
 
 func reset_camera() -> void:
 	position -= xr_camera.position
