@@ -30,9 +30,12 @@ random_volume_offset_db = 6.0
 streams_count = 1
 stream_0/stream = ExtResource("7_3g4rw")
 
-[node name="Patron" type="Node3D"]
+[node name="Patron" type="Area3D"]
 script = ExtResource("1_q0qsk")
 effect = SubResource("Resource_q3mus")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m1fkb")
 
 [node name="Chamber Position" parent="." instance=ExtResource("2_m1fkb")]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)

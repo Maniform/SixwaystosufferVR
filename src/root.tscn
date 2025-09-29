@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://catmh6bdnn6fa"]
+[gd_scene load_steps=62 format=3 uid="uid://catmh6bdnn6fa"]
 
 [ext_resource type="Script" uid="uid://6morfrbpxxv8" path="res://init_xr.gd" id="1_sbofu"]
 [ext_resource type="Material" uid="uid://cqrht8riym6nn" path="res://assets/shaders/posterize_canvas.tres" id="1_sq7yr"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://da0daf5uam86m" path="res://xr_origin_3d.gd" id="5_623xu"]
 [ext_resource type="PackedScene" uid="uid://c76i00ukwlksk" path="res://assets/furniture/table_01/table_01.tscn" id="5_l8v81"]
 [ext_resource type="PackedScene" uid="uid://btj7p6v75j8f2" path="res://environment/lamps/lamp.tscn" id="6_vyht1"]
-[ext_resource type="PackedScene" uid="uid://dvbqsel4ymb2x" path="res://revolver/revolver.tscn" id="7_sbofu"]
 [ext_resource type="PackedScene" uid="uid://c5rkeo6ndeq1d" path="res://revolver/mockup/revolver_table_mockup.tscn" id="7_vte5o"]
 [ext_resource type="PackedScene" uid="uid://b33dr7k4v11mv" path="res://dealer/dealer.tscn" id="8_bf3um"]
 [ext_resource type="PackedScene" uid="uid://bipg2ekrwq3vr" path="res://environment/table/choice_labels.tscn" id="9_r3r3k"]
@@ -50,8 +49,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf3um"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_623xu"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.5019608)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_623xu"]
 size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbofu"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.5019608)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sc48t"]
 
@@ -407,16 +414,14 @@ environment = ExtResource("2_r3r3k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 3.963, 2.802)
 patrons = NodePath("../Table/Patrons")
 
-[node name="XROrigin3D" type="XROrigin3D" parent="SubViewportContainer/SubViewport/World3D/Play Room" node_paths=PackedStringArray("non_xr_player", "revolver_table_mockup", "revolver", "intro_state")]
+[node name="XROrigin3D" type="XROrigin3D" parent="SubViewportContainer/SubViewport/World3D/Play Room" node_paths=PackedStringArray("player", "revolver_table_mockup", "state_machine")]
 transform = Transform3D(1.0000002, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 0.34, 3.963, 2.802)
-world_scale = 3.5
 script = ExtResource("5_623xu")
-non_xr_player = NodePath("../Player")
+player = NodePath("../Player")
 position_offset = Vector3(0, 0, -1.5)
 revolver_table_mockup = NodePath("../Table/Revolver Table Mockup")
-revolver = NodePath("../Table/Revolver")
 revolver_speed = 10.0
-intro_state = NodePath("../../GameLoop/StateMachine/IntroState")
+state_machine = NodePath("../../GameLoop/StateMachine")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/XROrigin3D"]
 current = true
@@ -428,6 +433,7 @@ tracker = &"left_hand"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/XROrigin3D/LeftHand/Area3D"]
+material_override = SubResource("StandardMaterial3D_623xu")
 size = Vector3(0.3, 0.3, 0.3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/XROrigin3D/LeftHand/Area3D"]
@@ -440,6 +446,7 @@ tracker = &"right_hand"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/XROrigin3D/RightHand/Area3D"]
+material_override = SubResource("StandardMaterial3D_sbofu")
 size = Vector3(0.3, 0.3, 0.3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/XROrigin3D/RightHand/Area3D"]
@@ -453,11 +460,6 @@ monitor = NodePath("../Quequed Monitor3D")
 
 [node name="Revolver Table Mockup" parent="SubViewportContainer/SubViewport/World3D/Play Room/Table" instance=ExtResource("7_vte5o")]
 transform = Transform3D(-2.18557e-08, 0.5, 0.866026, -1, -4.37114e-08, -4.24626e-15, 3.78552e-08, -0.866026, 0.5, 0.231696, 4.12209, 0.381624)
-
-[node name="Revolver" parent="SubViewportContainer/SubViewport/World3D/Play Room/Table" instance=ExtResource("7_sbofu")]
-unique_name_in_owner = true
-transform = Transform3D(-2.1855692e-08, 0.49999952, 0.86602515, -1.0000002, -4.3711367e-08, -4.2462558e-15, 3.7855187e-08, -0.86602515, 0.49999952, 0.231696, 4.12209, 0.381624)
-visible = false
 
 [node name="Quequed Monitor3D" parent="SubViewportContainer/SubViewport/World3D/Play Room/Table" instance=ExtResource("11_po8fv")]
 transform = Transform3D(0.902187, 0, 0.431346, 0, 1, 0, -0.431346, 0, 0.902187, -1.7803, 4.0558, -1.2514)

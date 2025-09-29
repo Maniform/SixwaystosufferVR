@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5rkeo6ndeq1d"]
 
-[ext_resource type="Script" uid="uid://dvh37wnsy4miy" path="res://common/interactions/clickable_area3d.gd" id="1_ikrun"]
+[ext_resource type="Script" uid="uid://bxkfy056bd7ik" path="res://revolver/mockup/revolver_table_mockup.gd" id="1_ikrun"]
 [ext_resource type="PackedScene" uid="uid://cs8wjjhrmln2d" path="res://assets/revolver/revolver.tscn" id="2_l3et7"]
 [ext_resource type="Script" uid="uid://beatoaa760esh" path="res://common/interactions/raise_on_hover.gd" id="3_cdfdr"]
 

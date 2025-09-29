@@ -1,0 +1,2 @@
+class_name RevolverTableMockup
+extends ClickableArea3D

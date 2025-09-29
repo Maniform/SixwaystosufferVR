@@ -1,5 +1,5 @@
 class_name Patron
-extends Node3D
+extends Area3D
 
 signal clicked(patron: Patron)
 signal hovered(patron: Patron)

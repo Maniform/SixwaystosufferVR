@@ -17,6 +17,7 @@ func enter_async() -> void:
 	audio_player.play()
 	woosh_player.play()
 	
+	revolver.show()
 	#await tween_taking_revolver(start_position, start_rotation)
 
 func tween_taking_revolver(target_position: Vector3, target_rotation: Vector3) -> void:

@@ -15,6 +15,8 @@ signal chamber_updated(revolver: Revolver)
 @onready var player_self_aiming_state: PlayerSelfAimingState = %PlayerSelfAimingState
 @onready var player_target_aiming_state: PlayerTargetAimingState = %PlayerTargetAimingState
 
+@onready var revolver_interact_area: Area3D = $"Player Hand/Tremor/Revolver/Revolver Interact Area3D"
+
 var initial_revolver_position: Node3D
 
 func _ready() -> void:
